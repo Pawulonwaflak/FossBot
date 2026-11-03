@@ -35,6 +35,7 @@ setup(
     entry_points={
         'console_scripts': [
             'random_spawner = fossbot_educational_description.random_spawner:main',
+            'dashboard = fossbot_educational_description.dashboard:main',
         ],
     },
 )

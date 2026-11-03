@@ -109,6 +109,14 @@ def generate_launch_description():
                 condition=IfCondition(LaunchConfiguration('rviz'))
     )
 
+    dashboard_node = Node(
+        package='fossbot_educational_description',
+        executable='dashboard',
+        name='dashboard',
+        output='screen',
+        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    )
+
     # Define and return the LaunchDescription
     return LaunchDescription([
         world_arg,
@@ -130,5 +138,6 @@ def generate_launch_description():
         start_gazebo,
         spawn_entity_node,
         rviz2_node,
+        dashboard_node,
         ros_gz_bridge
     ])
